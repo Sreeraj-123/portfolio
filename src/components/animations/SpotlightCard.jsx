@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-const SpotlightCard = ({ children, className = '', spotlightColor = "rgba(255, 255, 255, 0.15)" }) => {
+const SpotlightCard = ({ children, className = "" }) => {
   const divRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -39,34 +39,24 @@ const SpotlightCard = ({ children, className = '', spotlightColor = "rgba(255, 2
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`spotlight-card ${className}`}
+      className={`project-card glass-panel ${className}`}
       style={{
-         position: 'relative',
-         overflow: 'hidden',
-         borderRadius: '8px',
-         background: 'var(--glass-bg)',
-         border: '1px solid var(--glass-border)',
-         transition: 'all var(--transition-speed)'
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      {/* Spotlight layer */}
       <div
         style={{
           opacity,
+          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.1), transparent 40%)`,
           position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 40%)`,
-          zIndex: 0,
+          inset: 0,
           pointerEvents: 'none',
-          transition: 'opacity 0.3s ease'
+          transition: 'opacity 300ms ease',
+          zIndex: 1,
         }}
       />
-      
-      {/* Content wrapper */}
-      <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ position: 'relative', zIndex: 2, height: '100%', display: 'flex', flexDirection: 'column' }}>
         {children}
       </div>
     </div>

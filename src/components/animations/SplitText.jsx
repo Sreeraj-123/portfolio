@@ -1,17 +1,14 @@
 import React from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-const SplitText = ({ text, delay = 0, className = '' }) => {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const letters = Array.from(text);
+const SplitText = ({ text }) => {
+  const words = text.split(" ");
 
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: delay * i },
+      transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
     }),
   };
 
@@ -37,20 +34,18 @@ const SplitText = ({ text, delay = 0, className = '' }) => {
   };
 
   return (
-    <motion.span
-      ref={ref}
-      style={{ overflow: "hidden", display: "inline-block" }}
+    <motion.div
+      style={{ overflow: "hidden", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "12px" }}
       variants={container}
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      className={className}
+      animate="visible"
     >
-      {letters.map((letter, index) => (
-        <motion.span variants={child} key={index} style={{ display: "inline-block" }}>
-          {letter === " " ? "\u00A0" : letter}
+      {words.map((word, index) => (
+        <motion.span variants={child} style={{ display: "inline-block" }} key={index}>
+          {word}
         </motion.span>
       ))}
-    </motion.span>
+    </motion.div>
   );
 };
 

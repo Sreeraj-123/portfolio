@@ -5,7 +5,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'E-Commerce Dashboard',
-      description: 'A React-based admin dashboard to manage products, view sales analytics, and track user engagement in real-time. Designed with a dark UI theme.',
+      description: 'A React-based admin dashboard to manage products, view sales analytics, and track user engagement in real-time. Designed with a sleek minimal UI theme.',
       tech: ['React', 'Vite', 'CSS Variables', 'Chart.js'],
       github: '#',
       live: '#'
@@ -19,8 +19,8 @@ const Projects = () => {
     },
     {
       title: 'Interactive Portfolio',
-      description: 'A highly dynamic, glassmorphism-inspired portfolio for web developers, featuring smooth animations and Web3Forms integration.',
-      tech: ['React', 'HTML/CSS', 'Git'],
+      description: 'A highly dynamic, minimalist portfolio for web developers, featuring smooth animations, React Bits style UI effects, and Web3Forms integration.',
+      tech: ['React', 'Framer Motion', 'Git'],
       github: '#',
       live: '#'
     }
@@ -31,7 +31,7 @@ const Projects = () => {
       <h2 className="section-title">Featured Projects</h2>
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <SpotlightCard key={index} className="project-card">
+          <SpotlightCard key={index}>
             <div className="project-header">
               <i className="fa-regular fa-folder project-folder"></i>
               <div className="project-links">

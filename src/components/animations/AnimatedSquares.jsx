@@ -1,57 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 const AnimatedSquares = () => {
-  const [squares, setSquares] = useState([]);
-
-  useEffect(() => {
-    // Generate purely static initial positions to avoid hydration mismatch
-    // (though less relevant for purely client-side Vite)
-    const newSquares = Array.from({ length: 8 }).map(() => ({
-      x: Math.random() * 100 + "vw",
-      duration: Math.random() * 15 + 15,
-      delay: Math.random() * 10,
-      scale: Math.random() * 0.5 + 0.5
-    }));
-    setSquares(newSquares);
-  }, []);
-
+  const squares = Array.from({ length: 15 });
   return (
-    <div style={{
-      position: 'absolute',
-      top: 0, left: 0, right: 0, bottom: 0,
-      overflow: 'hidden',
-      zIndex: -1,
-      pointerEvents: 'none'
-    }}>
-      {squares.map((sq, i) => (
+    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', zIndex: -1 }}>
+      {squares.map((_, i) => (
         <motion.div
           key={i}
           initial={{
-            opacity: 0,
-            y: "100vh",
-            x: sq.x,
-            rotate: 0,
-            scale: sq.scale
+            y: `${Math.random() * 100}vh`,
+            x: `${Math.random() * 100}vw`,
+            opacity: Math.random() * 0.15 + 0.05,
+            scale: Math.random() * 0.8 + 0.3,
+            rotate: Math.random() * 360,
           }}
           animate={{
-            opacity: [0, 0.2, 0],
-            y: "-10vh",
-            rotate: 360,
+            y: [`${Math.random() * 100}vh`, `${Math.random() * 100}vh`],
+            x: [`${Math.random() * 100}vw`, `${Math.random() * 100}vw`],
+            rotate: [null, Math.random() * 360],
           }}
           transition={{
-            duration: sq.duration,
+            duration: Math.random() * 40 + 30, /* Very slow drift */
             repeat: Infinity,
-            delay: sq.delay,
-            ease: "linear"
+            repeatType: "reverse",
+            ease: "linear",
           }}
           style={{
             position: 'absolute',
-            width: '80px',
-            height: '80px',
+            width: '60px',
+            height: '60px',
             border: '1px solid rgba(255, 255, 255, 0.1)',
+            borderRadius: '8px',
             background: 'rgba(255, 255, 255, 0.02)',
-            borderRadius: '10%'
           }}
         />
       ))}

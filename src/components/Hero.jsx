@@ -4,19 +4,14 @@ import AnimatedSquares from './animations/AnimatedSquares';
 
 const Hero = () => {
   return (
-    <section id="hero" className="hero-section" style={{ position: 'relative' }}>
+    <section id="hero" className="hero-section" style={{ position: 'relative', overflow: 'hidden' }}>
       <AnimatedSquares />
-      
-      <div className="hero-content" style={{ zIndex: 1, position: 'relative' }}>
-        <span className="hero-greeting">
-          <SplitText text="Hi, my name is" delay={0.1} />
-        </span>
-        <h1 className="hero-title">
-          <SplitText text="Sreeraj V R." delay={0.3} />
+      <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
+        <span className="hero-greeting">Hi, my name is</span>
+        <h1 className="hero-title" style={{ margin: 0 }}>
+          <SplitText text="Sreeraj V R." />
         </h1>
-        <h2 className="hero-subtitle">
-          <SplitText text="I build things for the web." delay={0.5} />
-        </h2>
+        <h2 className="hero-subtitle">I build things for the web.</h2>
         <p className="hero-description">
           I'm a Frontend Developer specializing in building exceptional digital experiences. 
           Currently, I'm focused on creating accessible, human-centered products using modern React architectures.
@@ -26,13 +21,13 @@ const Hero = () => {
         </a>
         
         <div className="hero-socials">
-          <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" className="social-icon">
+          <a href="https://github.com/Sreeraj-123" target="_blank" rel="noreferrer" className="social-icon">
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noreferrer" className="social-icon">
+          <a href="https://linkedin.com/in/sreeraj-v-r" target="_blank" rel="noreferrer" className="social-icon">
             <i className="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="mailto:your.email@example.com" className="social-icon">
+          <a href="mailto:sreeraj@example.com" className="social-icon">
             <i className="fa-solid fa-envelope"></i>
           </a>
         </div>
