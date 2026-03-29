@@ -1,0 +1,55 @@
+:root {
+  /* Design System Tokens */
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --accent-color: #ffffff;
+  --accent-light: #cccccc;
+  --text-primary: #ffffff;
+  --text-secondary: #a1a1aa;
+  --glass-bg: rgba(25, 25, 25, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.8);
+  --font-family: 'Outfit', sans-serif;
+  --transition-speed: 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-family);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(255, 255, 255, 0.03), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.03), transparent 25%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+}
