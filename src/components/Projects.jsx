@@ -4,24 +4,24 @@ import SpotlightCard from './animations/SpotlightCard';
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Dashboard',
-      description: 'A React-based admin dashboard to manage products, view sales analytics, and track user engagement in real-time. Designed with a sleek minimal UI theme.',
-      tech: ['React', 'Vite', 'CSS Variables', 'Chart.js'],
+      title: 'Recycling Rewards Platform',
+      description: 'A dedicated platform to promote recycling initiatives featuring a built-in user reward system. Built with a modern React frontend and a powerful Django backend.',
+      tech: ['React', 'Django', 'Python', 'Rewards System'],
       github: '#',
       live: '#'
     },
     {
-      title: 'Data Visualizer App',
-      description: 'A Python and React fullstack application that visualizes complex datasets. Integrated Docker for seamless orchestration and deployment.',
-      tech: ['Python', 'React', 'Docker', 'SQL'],
-      github: '#',
+      title: 'Movie Recommendation Website',
+      description: 'A dynamic movie recommendation platform featuring robust search and filtering functionality. Utilized JavaScript for seamless API integration and built a fully responsive user interface.',
+      tech: ['JavaScript', 'REST API', 'HTML/CSS'],
+      github: 'https://github.com/Sreeraj-123/movie-recommendation-app.git',
       live: '#'
     },
     {
-      title: 'Interactive Portfolio',
-      description: 'A highly dynamic, minimalist portfolio for web developers, featuring smooth animations, React Bits style UI effects, and Web3Forms integration.',
-      tech: ['React', 'Framer Motion', 'Git'],
-      github: '#',
+      title: 'Interactive Portfolio Website',
+      description: 'Designed and deployed this personal portfolio featuring mobile-first responsive design, advanced UI, and React Bits animations. Hosted on Vercel.',
+      tech: ['React', 'Vite', 'Framer Motion', 'Vercel'],
+      github: 'https://github.com/Sreeraj-123/portfolio',
       live: '#'
     }
   ];
