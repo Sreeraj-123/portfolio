@@ -201,13 +201,6 @@
   justify-content: center;
   padding: 2rem;
   transition: all var(--transition-speed);
-  cursor: pointer;
-}
-
-.skill-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--accent-color);
 }
 
 .skill-icon {
@@ -215,10 +208,6 @@
   margin-bottom: 1rem;
   color: var(--text-primary);
   transition: color var(--transition-speed);
-}
-
-.skill-card:hover .skill-icon {
-  color: var(--accent-light);
 }
 
 .skill-name {

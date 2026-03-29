@@ -27,7 +27,7 @@ const Hero = () => {
           <a href="https://linkedin.com/in/sreeraj-v-r" target="_blank" rel="noreferrer" className="social-icon">
             <i className="fa-brands fa-linkedin-in"></i>
           </a>
-          <a href="mailto:sreeraj@example.com" className="social-icon">
+          <a href="mailto:sreerajvr10@gmail.com" className="social-icon">
             <i className="fa-solid fa-envelope"></i>
           </a>
         </div>
